@@ -44,15 +44,15 @@ class StudentController {
   }
 
   jwt(req, res, next) {
-    // let token = jwt.sign({
-    //   exp:Math.floor(Date.now() / 1000) + 2,
-    //   name:'Nguyễn Hoàng Thắng Thuận',
-    //   email:'thuanvp012van@gmail.com',
-    //   address:'Hà Nội'
-    // }, 'thuanvp012');
-    // setTimeout(function(){
-    //   res.send(token);
-    // },6000);
+    let token = jwt.sign({
+      exp:Math.floor(Date.now() / 1000) + 2,
+      name:'Nguyễn Hoàng Thắng Thuận',
+      email:'thuanvp012van@gmail.com',
+      address:'Hà Nội'
+    }, 'thuanvp012');
+    setTimeout(function(){
+      res.send(token);
+    },6000);
     const str =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDEyOTI4MDcsIm5hbWUiOiJOZ3V54buFbiBIb8OgbmcgVGjhuq9uZyBUaHXhuq1uIiwiZW1haWwiOiJ0aHVhbnZwMDEydmFuQGdtYWlsLmNvbSIsImFkZHJlc3MiOiJIw6AgTuG7mWkiLCJpYXQiOjE2MDEyOTI4MDV9.hIquodrr7RirYKTTiznIuQB3s6LGRraJDcYqRyhAj-8";
     jwt.verify(str, "thuanvp012", function (err, decoded) {
